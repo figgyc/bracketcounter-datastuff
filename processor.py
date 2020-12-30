@@ -17,7 +17,7 @@ voteregex = re.compile(r"\[(.)\]", re.M)
 cowards = 0
 data = datafile.loadData(ep["savestateFilename"])
 deadline = int(data['deadline'])
-epoch = deadline - 172800000 # 48h in ms
+epoch = deadline - (3600000 * ep["deadlineHours"]) # 48h in ms
 entriessorted = sorted(data['entries'], key=lambda k: k['date']) 
 entriessorted.reverse() # newest first for deduplicating
 usersProcessed = set()

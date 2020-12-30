@@ -28,6 +28,8 @@ bfb19 = {
     },
     # this detail is only used in data-alleps.py to select a color for a given episode's line
     "loser": "e",
+    # how many hours voting went on from the upload of the video
+    "deadlineHours": 48,
 }
 
 
