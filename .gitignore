@@ -3,3 +3,6 @@ __pycache__
 config.py
 graph-totals.html
 internal
+
+.direnv
+result

@@ -32,26 +32,23 @@ def graphify(ep):
         totalVotes[key] = 0
         votesOverTime[key] = {}
         votesPerTime[key] = {}
-        for minute in range(0, int(ep['deadlineHours']*60)+1):
-            votesPerTime[key][minute] = 0
 
     for vote in votessorted:
-        #print(vote)
         time = int( (vote['date'] - epoch) / 1000) # as far as i can tell youtube rounds it
         minute = int(time/60)
         n = 1
         #n = vote['likes']
-        #n = 1 if vote['edited'] else 0
+        #n = 0 if vote['edited'] else 1
         totalVotes[vote['vote']] += n
         votesOverTime[vote['vote']][time] = totalVotes[vote['vote']]
         if minute not in votesPerTime[vote['vote']]:
             votesPerTime[vote['vote']][minute] = 0
-        votesPerTime[vote['vote']][minute] += n
-        totalVotes['total'] += n
-        votesOverTime['total'][time] = totalVotes['total']
+            votesPerTime[vote['vote']][minute] += n
+            totalVotes['total'] += n
+            votesOverTime['total'][time] = totalVotes['total']
         if minute not in votesPerTime['total']:
             votesPerTime['total'][minute] = 0
-        votesPerTime['total'][minute] += n
+            votesPerTime['total'][minute] += n
 
     fig, ax = plt.subplots()
     for char in translation.keys():
@@ -119,7 +116,6 @@ def graphify(ep):
     discordPostable += "```"
     return plt, discordPostable
 
-if __name__ == "__main__":
-    plt, out = graphify(tep)
-    print(out)
-    plt.show()
+plt, out = graphify(tep)
+print(out)
+plt.show()

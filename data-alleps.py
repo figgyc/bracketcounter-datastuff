@@ -54,6 +54,7 @@ for ep in config.episodes:
     i += 1
 
 
+ax.set_xlim(-100, 48*60*60 +100)
 plt.legend()
 plt.xlabel("s since upload")
 plt.ylabel("votes")

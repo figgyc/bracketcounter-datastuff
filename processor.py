@@ -12,19 +12,23 @@ for vote in validVotes:
     allVotes += vote
 
 voteregex = re.compile(r"\[(.)\]", re.M)
-
+# voteregex = re.compile(r"(needle|rocky|teardrop|leafy|flower|golf ball|coiny|snowball|ice cube|tennis ball)", re.M)
 
 cowards = 0
 data = datafile.loadData(ep["savestateFilename"])
 deadline = int(data['deadline'])
 epoch = deadline - (3600000 * ep["deadlineHours"]) # 48h in ms
+#print(deadline, epoch)
+#epoch = 1262363842000 * 1000
+#deadline = epoch + (3600000 * ep["deadlineHours"])
 entriessorted = sorted(data['entries'], key=lambda k: k['date']) 
 entriessorted.reverse() # newest first for deduplicating
 usersProcessed = set()
 votes = []
 for entry in entriessorted:
     isCoward = entry['userId'] in usersProcessed
-    if True: #if entry['date'] <= deadline:
+    if entry['date'] <= deadline:
+        #print(entry)
         comment = (entry['content']).lower()
         matches = re.findall(voteregex, comment)
         # matches.reverse()
@@ -35,7 +39,16 @@ for entry in entriessorted:
                     vote = match
                     if vote != "":
                         if not isCoward:
-                            votes.append({'date': entry['date'], 'vote': vote, 'user': hashlib.sha256(str(entry['userId']).encode("utf8")).digest()})
+                            if entry['userId'] == "UC210Pp4CFbGfRK8DbMQ9k4Q": #bho
+                            #if entry['userId'] == "UCgXJoWsPCZaNd74q-Ms1LiQ": #tdo
+                                print(entry)
+                            if 'likes' not in entry:
+                                entry['likes'] = 0
+                            if 'edited' not in entry:
+                                entry['edited'] = False
+                            #print(entry)
+                            datechoose = entry['date']
+                            votes.append({'date': datechoose if 'postDate' in entry else entry['date'], 'vote': vote, 'likes': entry['likes'], 'edited': entry['edited'], 'user': hashlib.sha256(str(entry['userId']).encode("utf8")).digest()})
                             usersProcessed.add(entry['userId'])
                         else:
                             cowards += 1
