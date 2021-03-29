@@ -1,22 +1,75 @@
 {
   "nodes": {
-    "nixpkgs": {
+    "flake-utils": {
       "locked": {
-        "lastModified": 1615926763,
-        "narHash": "sha256-yeq8A3EPNuQVlsxlEQrIRsklfJwJK0Us6jtcG/u8wNs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b702a56d417647de4090ac56c0f18bdc7e646610",
+        "lastModified": 1610051610,
+        "narHash": "sha256-U9rPz/usA1/Aohhk7Cmc2gBrEEKRzcW4nwPWMPwja4Y=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "3982c9903e93927c2164caa727cd3f6a0e6d14cc",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1615797423,
+        "narHash": "sha256-5NGDZXPQzuoxf/42NiyC9YwwhwzfMfIRrz3aT0XHzSc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "266dc8c3d052f549826ba246d06787a219533b8f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1610729867,
+        "narHash": "sha256-bk/SBaBLqZX/PEqal27DMQwAHHl0dcZMp8NNksQr80s=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "04af07c659c6723a2259bb6bc00a47ec53330f20",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "poetry2nix": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1615557485,
+        "narHash": "sha256-9ZJY5qwK/lEWvPeIP0Y8VXSNfld5ZHodcu43Z4Mh2Kg=",
+        "owner": "sireliah",
+        "repo": "poetry2nix",
+        "rev": "1b28ff8919e433e3b64cf7d340657a24c6ca7e9e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sireliah",
+        "ref": "mk-poetry-propagate-packages",
+        "repo": "poetry2nix",
+        "type": "github"
       }
     },
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
+        "poetry2nix": "poetry2nix",
         "utils": "utils"
       }
     },
