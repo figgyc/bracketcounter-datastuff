@@ -6,3 +6,6 @@ internal
 
 .direnv
 result
+
+vlist.msgp
+out.csv
