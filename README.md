@@ -18,7 +18,7 @@ After you've processed data for an episode, you will want to use the main data s
 * `data.py` - **This is the main script** that you probably will only ever use, it produces the votes over time per character graph, the votes per minute graph, and **the main voting results numbers** (in a Discord postable format, but you can use them for anything)
 * `data-alleps.py` - This script creates a graph of the voters over time per episode (all characters)
 * `sankey.py` - This creates data for a voter switching graph; you need to put the output into [SankeyMATIC](http://sankeymatic.com/build/) or a compatible tool.
-* `allvoters.py` - This calclates the total number of all voters, or all voters who have voted on every episode, and outputs it to `vlist.msgp`, for use in `sankey.py` so you can chain the graphs together and produce a more interesting result.
+* `allvoters.py` - This calclates the total number of all voters, or all voters who have voted on every episode, and outputs it to `vlist.msgp`, for use in `sankey.py` so you can chain the graphs together and produce a more interesting result. Also, it creates the "voter newness" graph, which shows for each episode how many episodes each voter has voted on.
 
 ## Notes
 * The `graph` and `graph2` folders and `graph-totals.html` are HTML conversions of the graphs you see, designed to be uploaded to a website to view (mainly for my application, you probably won't need these)

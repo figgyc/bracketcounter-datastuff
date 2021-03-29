@@ -11,6 +11,7 @@ mpld3 = "^0.5.2"
 numpy = "^1.20.1"
 msgpack = "^1.0.2"
 certifi = "^2020.12.5"
+colour = "^0.1.5"
 
 [tool.poetry.dev-dependencies]
 certifi = "^2020.12.5"

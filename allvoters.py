@@ -23,7 +23,7 @@ for ep in episodes:
             if supes:
                 epusers.add(vote['user'])
     if supes:
-        #print(len(epusers))
+        print(len(epusers))
         voters = voters.intersection(epusers)
         #for user in voters.copy():
         #    if user not in epusers:
@@ -59,8 +59,8 @@ for ep in episodes:
     print(ep['epnumber'], epoccurences)
 
 fig, ax = plt.subplots()
-lastbar = np.empty(maxvotes)
-print(lastbar)
+lastbar = np.zeros(maxvotes)
+print("lb", lastbar)
 for label in reversed(labels):
     data = []
     for ep in eplabels:
