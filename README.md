@@ -4,8 +4,9 @@ This is the secondary repository for Bracketcounter - it's basically got everyth
 ## Setup
 This is a set of command line tools, you will want to use them in the Windows Command Prompt or PowerShell, or the Terminal on Linux or macOS.
 1. [Install Python 3](https://www.python.org/downloads/)
-2. Run `pip -r requirements.txt`
-3. Copy `config.example.py` to `config.py`
+1. Download these files or clone with Git (like with Bracketcounter itself)
+1. Run `pip -r requirements.txt`
+1. Copy `config.example.py` to `config.py`
 
 ## Usage
 1. Delete `savestate.json` and restart your Bracketcounter with a clean savestate (this should get rid of any since deleted comments that would interfere with the data)
@@ -19,8 +20,8 @@ After you've processed data for an episode, you will want to use the main data s
 * `data-alleps.py` - This script creates a graph of the voters over time per episode (all characters)
 * `sankey.py` - This creates data for a voter switching graph; you need to put the output into [SankeyMATIC](http://sankeymatic.com/build/) or a compatible tool.
 * `allvoters.py` - This calclates the total number of all voters, or all voters who have voted on every episode, and outputs it to `vlist.msgp`, for use in `sankey.py` so you can chain the graphs together and produce a more interesting result. Also, it creates the "voter newness" graph, which shows for each episode how many episodes each voter has voted on.
+* `datatool.py` just runs `data.py` for all episodes.
 
 ## Notes
 * The `graph` and `graph2` folders and `graph-totals.html` are HTML conversions of the graphs you see, designed to be uploaded to a website to view (mainly for my application, you probably won't need these)
-* `dataFilename` can be set as either a file ending in `msgp` or `json`. The `msgp` format is msgpack, which is much faster to encode and decode, and smaller in filesize, so it is recommended in most applications. You may find the `json` format more useful if you want to take the data and use it in other applications outside of these data tools.
-
+* `dataFilename` can be set as either a file ending in `msgp` or `json`. The `msgp` format is msgpack, which is much faster to encode and decode, and smaller in filesize, so it is recommended in most applications. You may find the `json` format more useful if you want to take the data and use it in other applications outside of these data tools. You can use `json2msgp.py` to convert.

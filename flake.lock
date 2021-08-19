@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1615797423,
-        "narHash": "sha256-5NGDZXPQzuoxf/42NiyC9YwwhwzfMfIRrz3aT0XHzSc=",
+        "lastModified": 1629292755,
+        "narHash": "sha256-5xMo32NVLnloY9DveqwJO/Cab1+PbTMPqU4WMmawX5M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "266dc8c3d052f549826ba246d06787a219533b8f",
+        "rev": "253aecf69ed7595aaefabde779aa6449195bebb7",
         "type": "github"
       },
       "original": {
@@ -52,16 +52,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1615557485,
-        "narHash": "sha256-9ZJY5qwK/lEWvPeIP0Y8VXSNfld5ZHodcu43Z4Mh2Kg=",
-        "owner": "sireliah",
+        "lastModified": 1629409045,
+        "narHash": "sha256-uiw6wBvm8Q3+HpFmPCqH8/u4rkZ83AlMqm9Dn2T66+s=",
+        "owner": "nix-community",
         "repo": "poetry2nix",
-        "rev": "1b28ff8919e433e3b64cf7d340657a24c6ca7e9e",
+        "rev": "c10156884773af1e0c376d0c4de4d32d217c6f37",
         "type": "github"
       },
       "original": {
-        "owner": "sireliah",
-        "ref": "mk-poetry-propagate-packages",
+        "owner": "nix-community",
         "repo": "poetry2nix",
         "type": "github"
       }
@@ -75,11 +74,11 @@
     },
     "utils": {
       "locked": {
-        "lastModified": 1614513358,
-        "narHash": "sha256-LakhOx3S1dRjnh0b5Dg3mbZyH0ToC9I8Y2wKSkBaTzU=",
+        "lastModified": 1629284811,
+        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "5466c5bbece17adaab2d82fae80b46e807611bf3",
+        "rev": "c5d161cc0af116a2e17f54316f0bf43f0819785c",
         "type": "github"
       },
       "original": {
