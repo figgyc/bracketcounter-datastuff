@@ -1,3 +1,6 @@
-orjson
-msgpack
 matplotlib
+mpld3
+numpy
+msgpack
+certifi
+colour
